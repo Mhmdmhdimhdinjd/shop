@@ -1,22 +1,20 @@
 import React , {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardMedia, CardContent, Typography ,Box } from '@mui/material';
-
-//import { addItem } from '../redux/reducers/CartReducer';
-// import { useDispatch } from 'react-redux';
+import { addItem } from '/src/redux/reducers/CartReducer';
+import { useDispatch } from 'react-redux';
 
 
 const ProductSlide = ({product}) => {
 
     const [added, setAdded] = useState(false)
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const handleAddToCart = (product) => {
-        // dispatch(addItem(product));
-        console.log('hnkj')
 
-
+        dispatch(addItem(product));
+        
         setAdded(true);
         setTimeout(() => {
             setAdded(false);

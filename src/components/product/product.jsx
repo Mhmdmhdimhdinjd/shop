@@ -1,23 +1,26 @@
 import React ,{useState} from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addItem } from '/src/redux/reducers/CartReducer';
+
 
 
 const Product = ({ product }) => {
 
     const [added, setAdded] = useState(false)
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const handleAddToCart = (product) => {
-        // dispatch(addItem(product));
-        console.log('hnkj')
+        
+        dispatch(addItem(product));
 
         setAdded(true);
         setTimeout(() => {
             setAdded(false);
         }, 2000);
+        
     };
 
 
