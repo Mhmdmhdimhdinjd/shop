@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '/src/redux/reducers/AuthSlice';
-import { Navigate } from 'react-router-dom';
-import { Typography, Box, Button, TextField } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Typography,Button, TextField } from '@mui/material';
 import '../../../styles/style.css'
 
 
@@ -14,28 +14,22 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    let redirectPath = localStorage.getItem('userredirect');
+    let redirectPath = JSON.parse(localStorage.getItem('userredirect'));
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      <Navigate to={redirectPath} />;
-
-      // localStorage.removeItem('userredirect')
-      // redirectPath = null
-
+      navigate(redirectPath)
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
     }
   };
 
   return (
-    <Box
-      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'gandom' }}
-    >
+    <>
       <Typography
         component="h1"
         fontFamily={'gandom'}
@@ -92,7 +86,7 @@ const Login = () => {
 
 
 
-    </Box>
+    </>
   );
 };
 

@@ -8,19 +8,13 @@ import '../../../App.css'
 
 const Signup = () => {
 
-
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
 
   const handleSignup = () => {
-    let redirectPath = localStorage.getItem('userredirect');
-
-
-
+    let redirectPath = JSON.parse(localStorage.getItem('userredirect'));
     const user = { username, password };
     dispatch(registerUser(user));
     navigate(redirectPath)

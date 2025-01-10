@@ -7,6 +7,7 @@ import store from "./redux/store";
 import PrivateRoute from "./navigation/PrivateRoute";
 import Login from './components/auth/login/Login'
 import Signup from "./components/auth/signup/Signup";
+import Userprofile from "./components/auth/userprofile/userprofile";
 
 
 const Apptest = () => {
@@ -40,6 +41,8 @@ const Apptest = () => {
                         <Route path='/shop/login' element={<Login />} />
 
                         <Route path='/shop/signup' element={<Signup />} />
+
+                        <Route path="/shop/user" element={<Userprofile/>}  />
 
                     </Routes>
 
