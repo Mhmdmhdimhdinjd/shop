@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '/src/redux/reducers/AuthSlice';
 import { useNavigate } from 'react-router-dom';
-import { Typography,Button, TextField } from '@mui/material';
+import { Typography,Button, TextField, Box } from '@mui/material';
 import '../../../styles/style.css'
 
 
@@ -22,14 +22,16 @@ const Login = () => {
 
     if (storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate(redirectPath)
+      navigate(redirectPath || '/shop/')
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
     }
   };
 
   return (
-    <>
+    <Box
+    sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', fontFamily: 'gandom' }}
+    >
       <Typography
         component="h1"
         fontFamily={'gandom'}
@@ -86,7 +88,7 @@ const Login = () => {
 
 
 
-    </>
+    </Box>
   );
 };
 

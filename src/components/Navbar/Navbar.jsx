@@ -23,7 +23,7 @@ const Navbar = () => {
               <ShoppingBasketOutlinedIcon style={{color:'black'}}/>
             </IconButton>
           </Link>
-          <Link to="/ninishop2/Profile">
+          <Link to="/shop/Profile">
             <IconButton color="inherit" onClick={() => localStorage.setItem('userredirect', location.pathname)}>
               <AccountCircleOutlinedIcon style={{color:'black'}}/>
             </IconButton>

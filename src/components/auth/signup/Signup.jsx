@@ -17,13 +17,13 @@ const Signup = () => {
     let redirectPath = JSON.parse(localStorage.getItem('userredirect'));
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate(redirectPath)
+    navigate(redirectPath || '/shop/')
 
   };
 
   return (
     <Box
-      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'gandom' }}
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', fontFamily: 'gandom' }}
     >
       <Typography
         component="h1"

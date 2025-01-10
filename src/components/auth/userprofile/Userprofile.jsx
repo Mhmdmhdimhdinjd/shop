@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '/src/redux/reducers/AuthSlice';
@@ -24,7 +24,9 @@ const Userprofile = () => {
 
 
     return (
-        <>
+        <Box
+            sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', fontFamily: 'gandom' }}
+        >
 
             <Typography
                 component="h1"
@@ -68,7 +70,7 @@ const Userprofile = () => {
             >
                 خروج از خساب کاربری</Button>
 
-        </>
+        </Box>
     )
 }
 
