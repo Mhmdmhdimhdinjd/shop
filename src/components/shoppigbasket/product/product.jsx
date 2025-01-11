@@ -32,7 +32,7 @@ const Shopping_b_Product = ({ product }) => {
             <CardContent
                 sx={{ px: 2, py: 2, display: 'flex', flexDirection: 'column' }}>
 
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/ninishop2/product/${product.id}`}>
 
                     <Typography variant='p' component="div" sx={{ fontWeight: 'bold', mb: 1, textDecoration: 'none' , fontFamily:'gandom' }}>{product.title}</Typography>
 

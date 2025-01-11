@@ -17,7 +17,7 @@ const Signup = () => {
     let redirectPath = localStorage.getItem('userredirect');
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate(redirectPath || '/')
+    navigate(redirectPath || '/shop/')
 
   };
 
