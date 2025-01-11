@@ -14,6 +14,7 @@ const Profilecontainer = () => {
         return <Signup />;
     } else if (!logeduser) {
         return <Login/>;
+        console.log(storeduser)
     }
 
     return(

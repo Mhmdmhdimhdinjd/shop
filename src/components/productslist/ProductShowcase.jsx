@@ -42,10 +42,11 @@ const ProductShowcase = () => {
             <Typography
                 component="h1"
                 sx={{
-                    textAlign: 'center', // text-center
-                    color: 'white', // text-white 
-                    fontSize: '2rem', // text-3xl 
-                    fontWeight: 'bold', // font-bold 
+                    textAlign: 'center',
+                    color: 'white', 
+                    fontSize: '2rem', 
+                    fontWeight: 'bold', 
+                    fontFamily:'gandom'
                 }} >
                 محصولات شگفت انگیز
             </Typography>

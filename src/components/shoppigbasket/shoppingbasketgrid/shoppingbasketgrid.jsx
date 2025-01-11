@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Grid } from "swiper/modules";
+import React from "react";
 import Shopping_b_Product from "../product/product";
+import Grid from '@mui/material/Grid';
 
 
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ cartItem }) => {
 
 
     return (
@@ -22,7 +22,7 @@ const ProductGrid = ({ products }) => {
             }}
         >
 
-            {products.map((product) => (
+            {cartItem.map((product) => (
                 <Shopping_b_Product key={product.id} product={product} />
             ))}
 

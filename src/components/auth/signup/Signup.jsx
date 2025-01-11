@@ -14,7 +14,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = () => {
-    let redirectPath = JSON.parse(localStorage.getItem('userredirect'));
+    let redirectPath = localStorage.getItem('userredirect');
     const user = { username, password };
     dispatch(registerUser(user));
     navigate(redirectPath || '/shop/')

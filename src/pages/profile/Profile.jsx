@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer/Footercontaier";
 import Navbar from "../../components/Navbar/Navbar";
-import Profilecontainer from "./profilecontainer";
+import Profilecontainer from "./Profilecontainer";
 import { Box } from "@mui/material";
 
 const Profile = () => {

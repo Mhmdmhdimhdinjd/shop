@@ -1,20 +1,21 @@
-import React from 'react';
-import {useLocation } from 'react-router-dom';
+import React , {useEffect}from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Profile from '../pages/profile/profile';
 
 
 const PrivateRoute = ({ children }) => {
 
-    location = useLocation()
-
+    const location = useLocation()
     const storeduser = useSelector((state) => state.auth.user);
     const logeduser = useSelector((state) => state.auth.logeduser);
-    localStorage.setItem('userredirect', JSON.stringify(location.pathname));
-    
-    
+    useEffect(() => { 
+        localStorage.setItem('userredirect', location.pathname); 
+    }, [location.pathname]);
+
+
     if (!storeduser) {
-        return<Profile/>
+        return <Profile />
     } else if (!logeduser) {
         return <Profile />;
     }

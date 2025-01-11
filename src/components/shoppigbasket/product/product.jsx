@@ -1,11 +1,12 @@
 import React from "react";
-import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-// import { useDispatch } from 'react-redux';
+import { Button, Card, CardContent, CardMedia, Typography , Link } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { removeItem } from "../../../redux/reducers/CartReducer";
 
 
 const Shopping_b_Product = ({ product }) => {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
 
 
@@ -51,7 +52,7 @@ const Shopping_b_Product = ({ product }) => {
 
 
                 <Button variant="contained" color="error" sx={{ borderRadius: 0, fontFamily: 'gandom',width:'100%' }} 
-                // onClick={() => dispatch(removeItem(product))} 
+                onClick={() => dispatch(removeItem(product))} 
                 >
                     حذف از سبد خرید
                 </Button>
