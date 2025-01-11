@@ -18,7 +18,7 @@ const Userprofile = () => {
 
         dispatch(logoutUser())
 
-        navigate('/shop/home')
+        navigate('/home')
 
     }
 
