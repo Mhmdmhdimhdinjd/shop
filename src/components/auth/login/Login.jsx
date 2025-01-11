@@ -22,7 +22,7 @@ const Login = () => {
 
     if (storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate(redirectPath || '/shop/')
+      navigate(redirectPath || '/')
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
     }
